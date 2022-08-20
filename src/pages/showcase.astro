@@ -1,0 +1,28 @@
+---
+import Wrapper from '../layouts/Wrapper.astro';
+import Nav from '../components/common/Nav.astro';
+import Working from '../components/common/Working.astro';
+---
+
+<Wrapper title="Ceol - Showcase">
+  <div class="fixed w-full z-100">
+    <Nav active="Showcase"/>
+  </div>
+  <div class="font-sans flex text-matty-900 h-screen items-center justify-center">
+    <Working />
+  </div>
+</Wrapper>
+
+<style>
+  body {
+    margin: 0
+  }
+
+  .material-symbols-filled {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+</style>

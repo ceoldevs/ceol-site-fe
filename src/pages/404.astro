@@ -1,0 +1,41 @@
+---
+import Wrapper from '../layouts/Wrapper.astro';
+import Nav from '../components/common/Nav.astro';
+---
+
+<Wrapper title="Welcome to Astro">
+  <div class="fixed w-full z-100">
+    <Nav active="Home"/>
+  </div>
+  <div class="flex text-matty-900 px-12 h-screen items-center justify-center flex-col">
+    <div class="text-3xl font-poppins flex gap-2 my-3">
+      <h2>
+        Oops! This is a 404 page. I believe you know what
+      </h2> 
+      <a href="https://en.wikipedia.org/wiki/HTTP_404" class="inline-block pl-1 text-blue-600 hover:decoration-1 hover:underline font-medium">
+        404 page
+      </a>
+      <h2 class=""> is</h2>
+    </div>
+    <div class="text-blue-600 flex gap-x-2">
+      <a class="hover:underline hover:decoration-1 hover:font-medium" href="/">Go back to home?</a>
+      <a class="hover:underline hover:decoration-1 hover:font-medium" href="/">Know our projects?</a>
+      <a class="hover:underline hover:decoration-1 hover:font-medium" href="/">Read our articles?</a>
+    </div>
+  </div>
+
+</Wrapper>
+
+<style>
+  body {
+    margin: 0
+  }
+
+  .material-symbols-filled {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+</style>

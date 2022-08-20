@@ -1,0 +1,33 @@
+---
+import CeolLogo from "../icons/CeolLogo.astro";
+
+const aboutLinks = [
+  {title: "Github", link: "https://github.com/ceoldevs"},
+  {title: "Article RSS", link: "/feed"},
+  {title: "Community", link: "https://discord.gg/Rr7dZHcdey"},
+  {title: "Subscribe to newsletter", link: "/articles/newsletter"},
+  {title: "Terms and Conditions", link: "/terms-and-conditions"},
+  {title: "Privacy Policy", link: "/privacy-policy"},
+  {title: "Site Developers", link: "/credits/devs"},
+  {title: "3rd Party Attributions", link: "/credits/attributions"},
+  {title: "Sponsors", link: "/sponsors"},
+  {title: "Feedback", link: "/feedback"},
+  {title: "FAQs", link: "/faqs"},
+]
+---
+
+<div class="border-2 border-matty-200 rounded-[3rem] p-10 grid grid-cols-6">
+  <div class="col-span-4">
+    <div>
+      Ceol community aims to improve innovation by creating real industry solutions and spreading knowledge required and in demand.
+    </div>
+    <div class="flex mt-2 gap-x-4 flex-wrap text-blue-600">
+      {aboutLinks.map( ({title, link}) => (
+        <a href={link} class="flex hover:underline hover:decoration-2">{title}</a>
+      ))}
+    </div>
+  </div>
+  <div class="col-span-2 flex justify-center items-center">
+    <CeolLogo/>
+  </div>
+</div>

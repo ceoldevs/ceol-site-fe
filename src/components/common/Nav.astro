@@ -1,0 +1,41 @@
+---
+import CeolLogo from "../icons/CeolLogo.astro";
+const {active} = Astro.props;
+const actionsList = [
+  {name: "Articles", icon: "feed", link: "/articles"},
+  {name: "Showcase", icon: "emoji_objects", link: "/showcase"},
+  {name: "Explore", icon: "explore", link: "/explore"},
+]
+
+const isActive = (name) => (active === name) ? "material-symbols-filled" : ""
+
+---
+
+<nav class="flex px-12 py-2 border-b-2 text-matty-800 bg-white/60 backdrop-blur-lg z-[100000]">
+  <div class="flex-1"><a href="/"><CeolLogo /></a></div>
+  <div class="flex justify-center items-center gap-4">
+    {actionsList.map( (action) => (
+      <a class="flex"
+        href={action.link}
+      >
+        <span class={
+          "text-matty-600 mr-2 material-symbols-rounded " + 
+          isActive(action.name)
+        }>
+          {action.icon}
+        </span>
+        {action.name}
+      </a>
+    ))}
+   </div>
+</nav>
+
+<style>
+  .material-symbols-filled {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+</style>
