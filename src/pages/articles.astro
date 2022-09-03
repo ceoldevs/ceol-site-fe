@@ -1,28 +1,105 @@
 ---
 import Wrapper from '../layouts/Wrapper.astro';
 import Nav from '../components/common/Nav.astro';
-import Working from '../components/common/Working.astro';
+import CardOutline from '../components/common/CardOutline.astro';
+import Card from '../components/common/Card.astro';
+
+let list = [
+  {
+    title:"Automating dormitory mess management",
+    description:"Improving the management of mess by automating parts of management to decrease labour work.",
+    href:"/showcase/automating-dormitory-mess-management",
+    image:"https://images.unsplash.com/photo-1600219069516-cbb3dd32fde0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" ,
+    type:"Article",
+    isTrending: true,
+  },
+  {
+    title:"Automating dormitory mess management",
+    description:"Improving the management of mess by automating parts of management to decrease labour work.",
+    href:"/showcase/automating-dormitory-mess-management",
+    image:"https://images.unsplash.com/photo-1600219069516-cbb3dd32fde0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" ,
+    type:"Article",
+    isTrending: false,
+  },
+  {
+    title:"Automating dormitory mess management",
+    description:"Improving the management of mess by automating parts of management to decrease labour work.",
+    href:"/showcase/automating-dormitory-mess-management",
+    image:"https://images.unsplash.com/photo-1600219069516-cbb3dd32fde0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" ,
+    type:"Article",
+    isTrending: false,
+  },
+  {
+    title:"Automating dormitory mess management",
+    description:"Improving the management of mess by automating parts of management to decrease labour work.",
+    href:"/showcase/automating-dormitory-mess-management",
+    image:"https://images.unsplash.com/photo-1600219069516-cbb3dd32fde0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" ,
+    type:"Article",
+    isTrending: false,
+  },
+  {
+    title:"Automating dormitory mess management",
+    description:"Improving the management of mess by automating parts of management to decrease labour work.",
+    href:"/showcase/automating-dormitory-mess-management",
+    image:"https://images.unsplash.com/photo-1600219069516-cbb3dd32fde0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" ,
+    type:"Article",
+    isTrending: false,
+  },
+]
 ---
 
 <Wrapper title="Ceol - Articles">
   <div class="fixed w-full z-100">
     <Nav active="Articles"/>
   </div>
-  <div class="font-sans flex text-matty-900 h-screen items-center justify-center">
-    <Working />
+  <div class="font-sans mx-24 flex flex-col text-matty-900 h-screen pt-24">
+    <div class="flex w-full">
+      <div class="flex-1">
+        <CardOutline>
+          <div class="flex pb-2 mr-10 group-hover:text-blue-600">
+            <h1 class="my-4 font-poppins flex-1 text-4xl font-medium">Interested in writing blogs?</h1>
+            <button class="material-symbols-rounded">
+              close
+            </button>
+          </div>
+          <div class="text-matty-700">Writing articles helps share your thoughts to others and help others and yourself in the process.</div>
+          <div class="font-poppins mt-8 font-medium py-4">
+            <a href="/showcase" class="font-poppins rounded-full bg-blue-500 text-white px-6 py-4">Become a writer</a>
+            <a href="/articles" class="font-poppins px-6 py-4 text-blue-500">View our guidelines</a>
+          </div>
+        </CardOutline>
+        <div class="flex search">
+          <div class="flex items-center relative flex-1 mt-8">
+            <input type="text" class="peer w-3/5 px-4 py-2 pl-12 focus:outline-none rounded-full border border-matty-200 focus:border-blue-500 transition-colors duration-400 ease-in-out" placeholder="Search for a blog. eg: Learning Github...">
+            <span class="material-symbols-rounded absolute pl-4 text-matty-400 peer-focus:text-matty-900">
+              search
+            </span>
+          </div>
+        </div>
+        <!-- <div class="border-1 border-matty-900 p-6 rounded-[3rem]"> Hello </div> -->
+      </div>
+      <div class="ml-24">
+        <img src="/article-guy.svg" class="h-64 my-8" alt="article guy">
+      </div>
+    </div>
+    <div class="text-matty-900">
+      <h2 class="font-poppins text-3xl my-8 mb-2 font-medium">All Articles</h2>
+      <div class="grid grid-cols-12 gap-8">
+        {
+          list.map((item, index) => (
+            <div class={"col-span-" + ((index == 0) ? 8 : 4) + " h-full"}>
+              <Card 
+                title={item.title} 
+                description={item.description}
+                href={item.href}
+                image={item.image}
+                type={item.type}
+                isTrending={item.isTrending}
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </div>
 </Wrapper>
-
-<style>
-  body {
-    margin: 0
-  }
-
-  .material-symbols-filled {
-    font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48
-  }
-</style>
