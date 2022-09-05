@@ -6,12 +6,23 @@ import About from '../components/home/About.astro';
 ---
 
 <Wrapper title="Welcome to Ceol">
+  <div class="absolute top-2 inset-x-52">
+    <svg class="w-40" width="270" height="169" viewBox="0 0 270 169" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 95.2326C54.2002 95.2326 98.1381 51.2523 98.1381 -3H171.512C171.512 51.2523 215.45 95.2326 269.65 95.2326V168.677C214.95 168.677 166.23 143.046 134.825 103.126C103.42 143.046 54.7006 168.677 0 168.677V95.2326Z" fill="#F1F5FD"/>
+    </svg>
+  </div>
+  <div class="absolute bottom-2 inset-x-1/2">
+    <svg class="animate-bounce w-6" xmlns="http://www.w3.org/2000/svg" width="32" height="59" fill="none" viewBox="0 0 32 59">
+      <rect class="stroke-matty-400 stroke-2" width="29" height="56" x="1.5" y="1.5" rx="14.5"/> <!--stroke="#3D464C" stroke-width="3" -->
+      <rect class="fill-matty-400" width="20" height="20" x="6" y="6" rx="10"/> <!--fill="#3D464C" -->
+    </svg>
+  </div>
   <div class="fixed w-full z-100">
     <Nav active="Home"/>
   </div>
-  <div class="font-sans flex text-matty-900 px-12 h-screen items-center">
+  <div class="font-sans flex text-matty-900 px-24 h-screen items-center">
     <div class="flex-1 flex flex-col pt-12">
-      <h1 class="font-poppins text-4xl font-medium my-8 leading-10">
+      <h1 class="font-poppins text-5xl font-medium my-8 leading-12">
         Learning comes from Developing and Sharing. Boost your journey with Ceol
       </h1>
       <div class="text-lg text-matty-700">
@@ -22,16 +33,22 @@ import About from '../components/home/About.astro';
         computer science
       </div>
       <div class="font-poppins mt-8 font-medium ">
-        <a href="/showcase" class="font-poppins rounded-full bg-matty-900 text-white px-6 py-4">Visit Showcase</a>
-        <a href="/articles" class="font-poppins px-6 py-4">Read our articles</a>
+        <a href="/showcase" class="font-poppins rounded-full bg-blue-500 text-white px-6 py-4">Visit Showcase</a>
+        <a href="/articles" class="font-poppins text-blue-500 px-6 py-4">Read our articles</a>
       </div>
     </div>
-    <div class="flex-1 overflow-hidden">
-      <img src="/ceol-3d.png" alt="ceol-3d" class="ml-16">
+
+    <div class="flex-1 overflow-hidden flex items-center">
+      <img src="/studying_girl.svg" alt="study girl" class="ml-16 mt-12">
     </div>
   </div>
 
-  <div class="px-12 text-matty-900">
+  <div class="px-24 text-matty-900">
+    <div class="absolute left-2">
+      <svg width="54" height="375" viewBox="0 0 54 375" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-1.95996 98.3423C34.4219 114.696 51.5268 148.865 53.2109 186.546C53.3649 189.992 50.5535 192.792 47.1045 192.792H5.02005C37.2912 210.678 51.7052 242.52 53.2159 277.501C53.3647 280.947 50.5535 283.745 47.1045 283.745H5.02005C37.2912 301.632 51.7052 333.474 53.2159 368.454C53.3647 371.9 50.5535 374.699 47.1045 374.699H-127.755C-131.204 374.699 -134.015 371.9 -133.866 368.454C-132.356 333.474 -117.942 301.632 -85.6705 283.745H-127.755C-131.204 283.745 -134.015 280.947 -133.866 277.501C-132.356 242.52 -117.942 210.678 -85.6705 192.792H-127.755C-131.204 192.792 -134.015 189.992 -133.861 186.547C-132.177 148.865 -115.072 114.696 -78.6905 98.3423L-121.45 25.6045L40.7995 25.6045L-1.95996 98.3423Z" fill="#F1F5FD"/>
+        </svg>        
+    </div>
     <h2 class="font-poppins text-3xl font-medium my-4">Projects and Research</h2>
     <div class="grid grid-cols-11 gap-8">
       <div class="col-span-4">
@@ -53,7 +70,7 @@ import About from '../components/home/About.astro';
       />
       </div>
       <div class="flex justify-center items-center col-span-3">
-        <a href="/showcase" class="flex rounded-full bg-matty-900/10 hover:bg-matty-200 text-matty-900 font-poppins font-medium px-6 py-4">
+        <a href="/showcase" class="flex rounded-full bg-blue-900/10 hover:bg-matty-200 text-matty-900 font-poppins font-medium px-6 py-4">
           Look at more Projects
           <span class="ml-2 material-symbols-rounded">arrow_forward</span>
         </a>
@@ -62,7 +79,12 @@ import About from '../components/home/About.astro';
     </div>
   </div>
 
-  <div class="px-12 text-matty-900 my-10">
+  <div class="px-24 text-matty-900 my-10">
+    <div class="absolute -translate-y-28 right-2 z-[-100]">
+      <svg width="640" height="291" viewBox="0 0 640 291" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 233.349V288.982C46.2773 288.038 82.6908 251.087 82.6908 205.641V95.3194C82.6908 69.0359 99.6194 56.5957 110.489 56.5957C121.359 56.5957 138.288 69.0359 138.288 95.3194V194.681C138.288 241.875 171.174 289 221.753 289C272.332 289 305.218 241.875 305.218 194.681V95.3194C305.218 69.0359 322.147 56.5957 333.017 56.5957C343.887 56.5957 360.815 69.0359 360.815 95.3194V194.681C360.815 241.875 393.701 289 444.281 289C494.86 289 527.746 241.875 527.746 194.681V95.3194C527.746 69.0359 544.674 56.5957 555.544 56.5957C566.414 56.5957 583.343 69.0359 583.343 95.3194V194.681C583.343 241.875 616.229 289 666.808 289C667.542 289 668.273 288.99 669 288.97V233.246C668.248 233.352 667.515 233.404 666.808 233.404C655.938 233.404 639.01 220.964 639.01 194.681V95.3194C639.01 48.1252 606.124 1 555.544 1C504.965 1 472.079 48.1253 472.079 95.3194V194.681C472.079 220.964 455.151 233.404 444.281 233.404C433.411 233.404 416.482 220.964 416.482 194.681V95.3194C416.482 48.1253 383.596 1 333.017 1C282.438 1 249.552 48.1253 249.552 95.3194V194.681C249.552 220.964 232.623 233.404 221.753 233.404C210.883 233.404 193.955 220.964 193.955 194.681V95.3194C193.955 48.1253 161.069 1 110.489 1C59.91 1 27.0242 48.1253 27.0242 95.3194V205.641C27.0242 220.379 15.5259 232.435 1 233.349Z" stroke="#D7D7D8" stroke-width="2"/>
+        </svg>
+    </div>
     <About />
   </div>
 </Wrapper>
