@@ -5,9 +5,10 @@ export interface Props {
 	href: string;
   type: string;
   image: string;
+  isTrending?: boolean;
 }
 
-const { href, title, description, type, image } = Astro.props as Props;
+const { href, title, description, type, image, isTrending } = Astro.props as Props;
 ---
 
 <div class="group bg-blue-900/10 rounded-[3rem] my-4">
@@ -18,11 +19,26 @@ const { href, title, description, type, image } = Astro.props as Props;
       north_east
     </span>
   </div>
-  <h2 class="text-3xl font-medium mx-10 mt-4 mb-6 font-poppins group-hover:underline group-hover:decoration-2 group-hover:text-blue-600">
+  <div>
+  <div class="h-20 flex flex-col justify-items-center mx-10 mt-4 mb-6 font-poppins">
+    {
+      isTrending === true ?
+      (
+        <div class="text-sm flex items-center gap-2">
+          <span class="material-symbols-rounded">
+            auto_awesome
+          </span>
+          Trending
+        </div>
+      ) : <div></div>
+    }
+    <h2 class="line-clamp-2 text-3xl font-medium group-hover:underline group-hover:decoration-2 group-hover:text-blue-600">
     <a href={href}>
       {title}
     </a>
-  </h2>
-  <div class="px-10">{description}</div>
+    </h2>
+  </div>
+  </div>
+  <div class="line-clamp-2 px-10 flex items-center h-12">{description}</div>
   <img src={image} alt={title.slice(0, 10)} class="w-full mt-8 rounded-[3rem] h-64 object-cover">
 </div>
